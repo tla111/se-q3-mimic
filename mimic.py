@@ -46,7 +46,13 @@ def create_mimic_dict(filename):
             }
     """
     # +++your code here+++
-    pass
+    new_dict = {}
+    with open("imdev.txt", "r") as f:
+        for word in f:
+            split_it = word.split()
+            for x in split_it:
+                new_dict[x] = 1
+    return new_dict
 
 
 def print_mimic_random(mimic_dict, num_words):
