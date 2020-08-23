@@ -48,11 +48,14 @@ def create_mimic_dict(filename):
     # +++your code here+++
     new_dict = {}
     with open("imdev.txt", "r") as f:
-        for word in f:
-            split_it = word.split()
-            for x in split_it:
-                new_dict[x] = 1
-    return new_dict
+        split_string = f.read().split()
+        for x in range(len(split_string)):
+            if x == 0:
+                new_dict[""] = split_string[0]
+            else:
+                new_dict[split_string[x - 1]] = split_string[x]
+        for k, v in new_dict.items():
+            print(f'"{k}" : "[{v}]"')
 
 
 def print_mimic_random(mimic_dict, num_words):
