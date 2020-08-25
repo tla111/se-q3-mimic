@@ -50,7 +50,7 @@ def create_mimic_dict(filename):
     """
     # +++your code here+++
     new_dict = {}
-    with open("imdev.txt", "r") as f:
+    with open(filename, "r") as f:
         split_string = f.read().split()
         for x in range(len(split_string)):
             if x == 0:
